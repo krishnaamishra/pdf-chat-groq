@@ -82,87 +82,26 @@ with st.sidebar:
     st.markdown("---")
     
 # Custom CSS for dark and light mode
-st.markdown("""
-<style>
-/* 🌗 Base styling for main container */
-.main {
-    background-color: var(--background-color);
-    padding: 20px;
-    color: var(--text-color);
-}
-
-/* 🌕 Light mode variables */
-:root {
-    --background-color: #f0f0f5;
-    --text-color: #000000;
-    --button-bg: #4CAF50;
-    --button-text: #ffffff;
-    --input-bg: #ffffff;
-    --textarea-bg: #f8f8f8;
-    --upload-bg: #2196F3;
-}
-
-/* 🌑 Dark mode override */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #1e1e1e;
-        --text-color: #ffffff;
-        --button-bg: #333333;
-        --button-text: #ffffff;
-        --input-bg: #2b2b2b;
-        --textarea-bg: #2b2b2b;
-        --upload-bg: #4a90e2;
-    }
-}
-
-/* 🎨 Buttons */
-.stButton button {
-    background-color: var(--button-bg);
-    color: var(--button-text);
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-}
-
-/* ✏️ Text input */
-.stTextInput input {
-    background-color: var(--input-bg);
-    color: var(--text-color);
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-/* 🗒️ Text area */
-.stTextArea textarea {
-    background-color: var(--textarea-bg);
-    color: var(--text-color);
-    border-radius: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-/* 📥 File uploader */
-.stFileUploader input[type="file"] {
-    background-color: var(--upload-bg);
-    color: white;
-    font-size: 14px;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-
-/* ⬇️ Download button */
-.stDownloadButton button {
-    background-color: var(--upload-bg);
-    color: white;
-    font-size: 14px;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-</style>
-""", unsafe_allow_html=True)
-
+if dark_mode:
+    st.markdown("""
+        <style>
+        body, .main { background-color: #1e1e1e; color: #ffffff; }
+        .stButton button, .stDownloadButton button, .stFileUploader input[type="file"] {
+            background-color: #333333; color: #ffffff;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+        <style>
+        .main { background-color: #f0f0f5; padding: 20px; }
+        .stButton button { background-color: #4CAF50; color: white; font-size: 16px; padding: 10px 20px; border-radius: 5px; }
+        .stTextInput input { background-color: #ffffff; border-radius: 5px; padding: 10px; }
+        .stTextArea textarea { background-color: #f8f8f8; border-radius: 5px; padding: 10px; }
+        .stDownloadButton button { background-color: #2196F3; color: white; font-size: 14px; padding: 10px 20px; border-radius: 5px; }
+        .stFileUploader input[type="file"] { background-color: #2196F3; color: white; font-size: 14px; padding: 10px 20px; border-radius: 5px; }
+        </style>
+    """, unsafe_allow_html=True)
 
 # Session states
 if "history" not in st.session_state:
@@ -210,8 +149,6 @@ if st.session_state.chunks:
         st.write("**Summary:**")
 
         st.write(summary)
-
-
 
 
 
