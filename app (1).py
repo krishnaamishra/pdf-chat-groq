@@ -96,7 +96,7 @@ else:
         <style>
         .main { background-color: #f0f0f5; padding: 20px; }
         .stButton button { background-color: #4CAF50; color: white; font-size: 16px; padding: 10px 20px; border-radius: 5px; }
-        .stTextInput input { background-color: #ffffff; border-radius: 5px; padding: 10px; }
+        .stTextInput input { background-color: #000000; border-radius: 5px; padding: 10px; }
         .stTextArea textarea { background-color: #f8f8f8; border-radius: 5px; padding: 10px; }
         .stDownloadButton button { background-color: #2196F3; color: white; font-size: 14px; padding: 10px 20px; border-radius: 5px; }
         .stFileUploader input[type="file"] { background-color: #2196F3; color: white; font-size: 14px; padding: 10px 20px; border-radius: 5px; }
@@ -149,6 +149,7 @@ if st.session_state.chunks:
         st.write("**Summary:**")
 
         st.write(summary)
+
 
 
 
