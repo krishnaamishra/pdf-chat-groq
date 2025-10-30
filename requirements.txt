@@ -3,6 +3,7 @@ PyPDF2>=3.0.0
 pypdf>=4.0.0
 langchain>=0.2.11
 langchain-core>=0.2.11
+langchain-community>=0.2.11
 langchain-text-splitters>=0.2.2
 chromadb>=0.5.0
 huggingface-hub>=0.23.0
@@ -12,3 +13,4 @@ python-dotenv>=1.0.0
 llama-index>=0.10.30
 pytesseract
 Pillow
+
