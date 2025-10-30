@@ -41,7 +41,7 @@ def create_vector_store(chunks):
     return vector_store
 
 # Function to call Groq API
-def chat_with_groq(prompt, model="llama3-70b-8192"):
+def chat_with_groq(prompt, model="llama-3.2-90b-text-preview"):
     headers = {
         "Authorization": f"Bearer {GROQ_API_KEY}",
         "Content-Type": "application/json",
@@ -149,6 +149,7 @@ if st.session_state.chunks:
         st.write("**Summary:**")
 
         st.write(summary)
+
 
 
 
