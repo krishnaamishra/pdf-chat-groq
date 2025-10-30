@@ -15,7 +15,8 @@ from datetime import datetime
 # -----------------------------
 # 🔐 Groq API Key (Set here)
 # -----------------------------
-GROQ_API_KEY = "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"
+import streamlit as st
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 # Function to extract text from PDFs
 def extract_text_from_pdfs(pdf_files):
@@ -146,4 +147,5 @@ if st.session_state.chunks:
     if st.button("Generate PDF Summary 📝"):
         summary = summarize_text(" ".join(st.session_state.chunks))
         st.write("**Summary:**")
+
         st.write(summary)
