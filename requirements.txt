@@ -1,4 +1,6 @@
 streamlit
+PyPDF2
+groq
 pypdf
 langchain
 llama-index>=0.10.30
@@ -6,3 +8,4 @@ chromadb
 huggingface-hub
 sentence-transformers
 requests
+
