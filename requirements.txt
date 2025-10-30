@@ -8,4 +8,7 @@ chromadb
 huggingface-hub
 sentence-transformers
 requests
+python-dotenv
+
+
 
