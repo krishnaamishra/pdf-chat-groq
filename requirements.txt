@@ -3,12 +3,14 @@ PyPDF2
 groq
 pypdf
 langchain
+langchain-core
 llama-index>=0.10.30
 chromadb
 huggingface-hub
 sentence-transformers
 requests
 python-dotenv
+
 
 
 
