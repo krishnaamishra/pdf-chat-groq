@@ -3,7 +3,7 @@ import os
 import tempfile
 import requests
 from PyPDF2 import PdfReader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.docstore.document import Document
@@ -149,3 +149,4 @@ if st.session_state.chunks:
         st.write("**Summary:**")
 
         st.write(summary)
+
