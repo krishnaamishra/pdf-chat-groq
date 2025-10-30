@@ -81,27 +81,91 @@ with st.sidebar:
    
     st.markdown("---")
     
-# Custom CSS for dark and light mode
+# 🌗 Custom CSS for rich Dark and Light Mode contrast
 if dark_mode:
     st.markdown("""
         <style>
-        body, .main { background-color: #1e1e1e; color: #ffffff; }
-        .stButton button, .stDownloadButton button, .stFileUploader input[type="file"] {
-            background-color: #333333; color: #ffffff;
+        /* ---- 🌙 Dark Mode ---- */
+        body, .main {
+            background-color: #0e1117;
+            color: #e0e0e0;
+        }
+        .stTextInput input, .stTextArea textarea {
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            border: 1px solid #3c3c3c;
+            border-radius: 6px;
+            padding: 10px;
+        }
+        .stButton button, .stDownloadButton button {
+            background-color: #2ecc71; /* bright green accent */
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+        .stButton button:hover, .stDownloadButton button:hover {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+        .stFileUploader input[type="file"] {
+            background-color: #3498db;
+            color: white;
+            font-size: 14px;
+            border-radius: 6px;
+            padding: 10px 20px;
+        }
+        .stFileUploader input[type="file"]:hover {
+            background-color: #2980b9;
         }
         </style>
     """, unsafe_allow_html=True)
 else:
     st.markdown("""
         <style>
-        .main { background-color: #f0f0f5; padding: 20px; }
-        .stButton button { background-color: #4CAF50; color: white; font-size: 16px; padding: 10px 20px; border-radius: 5px; }
-        .stTextInput input { background-color: #000000; border-radius: 5px; padding: 10px; }
-        .stTextArea textarea { background-color: #f8f8f8; border-radius: 5px; padding: 10px; }
-        .stDownloadButton button { background-color: #2196F3; color: white; font-size: 14px; padding: 10px 20px; border-radius: 5px; }
-        .stFileUploader input[type="file"] { background-color: #2196F3; color: white; font-size: 14px; padding: 10px 20px; border-radius: 5px; }
+        /* ---- ☀️ Light Mode ---- */
+        .main {
+            background-color: #f7f9fc;
+            color: #000000;
+            padding: 20px;
+        }
+        .stTextInput input, .stTextArea textarea {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            padding: 10px;
+        }
+        .stButton button, .stDownloadButton button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 6px;
+            padding: 10px 20px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .stButton button:hover, .stDownloadButton button:hover {
+            background-color: #43a047;
+            transform: scale(1.05);
+        }
+        .stFileUploader input[type="file"] {
+            background-color: #2196F3;
+            color: white;
+            font-size: 14px;
+            border-radius: 6px;
+            padding: 10px 20px;
+        }
+        .stFileUploader input[type="file"]:hover {
+            background-color: #1976d2;
+        }
         </style>
     """, unsafe_allow_html=True)
+
 
 # Session states
 if "history" not in st.session_state:
@@ -149,6 +213,7 @@ if st.session_state.chunks:
         st.write("**Summary:**")
 
         st.write(summary)
+
 
 
 
