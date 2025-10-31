@@ -146,24 +146,9 @@ if st.session_state.history:
 # 🧠 Improved PDF Summary (chunk-wise to avoid Groq token limit)
 if st.session_state.chunks:
     if st.button("Generate PDF Summary 📝"):
-        st.write("⏳ Generating summary in chunks... please wait...")
-
-        summaries = []
-        # Process 5 chunks at a time (adjust if needed)
-        for i in range(0, len(st.session_state.chunks), 5):
-            chunk_group = " ".join(st.session_state.chunks[i:i + 5])
-            partial_summary = summarize_text(chunk_group)
-            summaries.append(partial_summary)
-            st.write(f"✅ Processed chunks {i + 1}–{min(i + 5, len(st.session_state.chunks))}")
-
-        # Combine smaller summaries into one final summary
-        final_summary_input = " ".join(summaries)
-        summary = summarize_text(final_summary_input)
-
-        st.subheader("📄 Final Summary:")
+        summary = summarize_text(" ".join(st.session_state.chunks))
+        st.write("**Summary:**")
         st.write(summary)
-
-
 
 
 
