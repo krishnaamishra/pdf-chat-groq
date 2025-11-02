@@ -1,6 +1,6 @@
-# 📚 PDF Chat with Groq Llama3.3 🤖
+# 📚 PDF Chat with Groq Llama3.1 🤖
 
-This Streamlit web app allows users to upload one or more PDF files, extract their text, and interact with the content using Groq's Llama3.3 model.
+This Streamlit web app allows users to upload one or more PDF files, extract their text, and interact with the content using Groq's Llama3.1 model.
 
 ### 🚀 Features
 - Upload multiple PDFs
