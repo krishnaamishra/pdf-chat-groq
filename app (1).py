@@ -70,7 +70,7 @@ def summarize_text(text):
 # Streamlit Interface
 # -----------------------------
 st.set_page_config(page_title="PDF Chat with Groq", page_icon="📚")
-st.title("📚 PDF Chat with Groq Llama3.1 🤖")
+st.title("📚 AskMyPDF:	Your Personal PDF Assistant")
 
 # Sidebar UI
 with st.sidebar:
@@ -150,6 +150,7 @@ if st.session_state.chunks:
         summary = summarize_text(" ".join(st.session_state.chunks))
         st.write("**Summary:**")
         st.write(summary)
+
 
 
 
